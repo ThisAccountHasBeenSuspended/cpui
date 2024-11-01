@@ -1,0 +1,19 @@
+[package]
+name = "cpui"
+version = "0.1.0"
+authors = ["Nick Ilhan Atamgüc <nickatamguec@outlook.com>"]
+edition = "2021"
+repository = "https://github.com/ThisAccountHasBeenSuspended/cpui"
+license = "MIT"
+
+[dependencies]
+env_logger = { version = "0.11.5", default-features = false, features = ["auto-color", "humantime"] }
+strum = "0.26.3"
+strum_macros = "0.26.3"
+eframe = "0.29.1"
+
+[profile.release]
+strip = true        # Automatically strip symbols from the binary
+opt-level = 3       # Optimize for size
+lto = true          # Enable link time optimization
+codegen-units = 1   # Maximize size reduction optimizations
