@@ -9,7 +9,7 @@ pub fn __cpuid(addr: u32) -> x86::CpuidResult {
 }
 
 #[inline]
-pub fn has_feature(features: &[u32; 2], feature: usize) -> bool {
+pub fn has_feature(features: &[u32; 2], feature: u8) -> bool {
     (features[(feature > 31) as usize] & (1 << (feature % 32))) > 0
 }
 

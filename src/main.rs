@@ -71,7 +71,7 @@ impl Default for MyApp {
         let cpu_vendor = String::from_utf8(cpu_vendor_vec).unwrap();
         let cpu_frequencies = cpu::frequencies(cpu_family.max_lvl()).unwrap_or_default();
         let cpu_features_name_list = enums::Feature::iter()
-            .filter(|f| cpu::has_feature(&cpu_info.features, f.clone() as usize))
+            .filter(|f| cpu::has_feature(&cpu_info.features, f.clone() as u8))
             .map(|f| f.as_ref().to_string().to_uppercase())
             .collect::<Vec<String>>()
             .join(", ");
